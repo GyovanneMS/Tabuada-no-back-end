@@ -2,14 +2,15 @@
 * Objetivo: Aplicar estruturas de repetição (while and for);
 * Data: 04/08/22
 * Autor: Gyovanne Martins
-* Versão: 1.0.0
+* Versão: 1.3.0
 
 */
 
 console.log('Calculadora tabuada');
 
 //import do arquivo de função para realizar calculos
-const {calcular} = require('./Modulos/calculadora.js');
+
+const { calcularTabuada } = require('./modulos/tabuada.js')
 var readLine = require('readline');
 
 var entradaDados = readLine.createInterface({
@@ -17,3 +18,9 @@ var entradaDados = readLine.createInterface({
     output: process.stdout
 });
 
+
+entradaDados.question('Digite a tabuada a ser calculada: ', function(valor1){
+    let tabuada = valor1;
+    calcularTabuada(tabuada);
+    
+})
